@@ -1,2 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Proposal</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff5f6d, #ffc371);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .box {
+            background: rgba(0,0,0,0.4);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background: #00ff99;
+        }
+
+        #no {
+            background: #ff4d4d;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>I like you ❤️<br>Do you like me?</h1>
+
+    <button id="yes" onclick="yesClick()">Yes 😊</button>
+    <button id="no" onmouseover="moveNo()">No 😅</button>
+
+    <h2 id="result"></h2>
+</div>
+
+<script>
+    function yesClick() {
+        document.getElementById("result").innerHTML =
+            "😍 Yay! I knew it!";
+    }
+
+    function moveNo() {
+        let noBtn = document.getElementById("no");
+
+        let x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        let y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+</script>
+
+</body>
+</html>
 # Auto detect text files and perform LF normalization
 * text=auto
